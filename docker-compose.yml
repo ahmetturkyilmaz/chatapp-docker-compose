@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  chatdb:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+
+  chat.api:
+    image: ahmetturkyilmaz/chat-api:latest
+    container_name: chat-api
+
+  messagesender.api:
+    image: ahmetturkyilmaz/chat-message-api:latest
+    container_name: chat-api
+
+  ui:
+    image: ahmetturkyilmaz/chat-ui:latest
+    container_name: ui
